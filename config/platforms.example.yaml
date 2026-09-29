@@ -1,0 +1,18 @@
+schema_version: "1.0-example"
+replicate:
+  allowed: false
+
+comfyui_cloud:
+  allowed: true
+  live_inventory_required: true
+  workflow_id: null
+  credentials: "not_stored_in_project"
+
+runninghub:
+  allowed: true
+  payment_method: "RH Coins only"
+  workflow_or_app_id: null
+  estimate_before_run: true
+  explicit_confirmation_before_paid_run: true
+  credentials: "not_stored_in_project"
+

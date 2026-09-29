@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0-example",
+  "name": "ComfyUI Cloud Qwen Image 2.1 keyframe/reference preparation concept",
+  "status": "example_only_not_importable",
+  "executable": false,
+  "backend": "comfyui_cloud",
+  "intent": "Create an approved start/end keyframe while preserving character, location, composition, and optional structural controls.",
+  "safety": {
+    "allow_submit": false,
+    "requires_explicit_user_confirmation": true,
+    "requires_live_inventory_check": true,
+    "contains_credentials": false,
+    "contains_external_api_calls": false
+  },
+  "placeholders": {
+    "workflow_id": null,
+    "model_name": "<verify_live_qwen_image_2_1_edit_or_equivalent>",
+    "character_reference": "references/<character_reference>.png",
+    "location_reference": "references/<location_reference>.png",
+    "composition_reference": "references/<optional_composition>.png",
+    "pose_or_depth_control": "references/<optional_control>.png",
+    "positive_prompt": "<prompt_version_path_or_text>",
+    "negative_constraints": "<identity_and_continuity_constraints>"
+  },
+  "concept_nodes": [
+    {
+      "id": "01",
+      "type": "REFERENCE_INPUTS",
+      "inputs": ["character_reference", "location_reference", "composition_reference"]
+    },
+    {
+      "id": "02",
+      "type": "OPTIONAL_STRUCTURE_CONTROL",
+      "mode": "<pose|depth|canny|lineart|none>",
+      "input": "pose_or_depth_control"
+    },
+    {
+      "id": "03",
+      "type": "QWEN_IMAGE_2_1_EDIT_CONCEPT",
+      "model": "model_name",
+      "prompt": "positive_prompt",
+      "constraints": "negative_constraints",
+      "references_from": ["01"],
+      "control_from": ["02"]
+    },
+    {
+      "id": "04",
+      "type": "QC_GATE",
+      "checks": ["identity", "costume", "location_geometry", "composition", "hands_face", "continuity"]
+    },
+    {
+      "id": "05",
+      "type": "SAVE_APPROVED_KEYFRAME",
+      "path": "outputs/keyframes/<shot_id>_<start_or_end>_v###.png",
+      "metadata_path": "outputs/keyframes/<shot_id>_<start_or_end>_v###.json"
+    }
+  ],
+  "adaptation_checklist": [
+    "Discover exact nodes and model names from the live ComfyUI Cloud inventory.",
+    "Replace concept node types with verified API-format class_type entries.",
+    "Validate every connection and output index.",
+    "Save as a new workflow revision; do not overwrite the example.",
+    "Estimate any cost and obtain explicit confirmation before submission."
+  ]
+}
+

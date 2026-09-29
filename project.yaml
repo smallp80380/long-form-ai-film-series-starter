@@ -1,0 +1,69 @@
+schema_version: "1.0-example"
+project:
+  id: "<project_id>"
+  title: "<film_or_series_title>"
+  format: "series" # series | feature | short
+  logline: "<add_later>"
+  synopsis: "<add_later>"
+  language: "<add_later>"
+  status: "development"
+
+execution:
+  allow_generation: false
+  allow_external_api_calls: false
+  require_explicit_confirmation_per_paid_run: true
+  dry_run_only_until_approved: true
+
+backend_policy:
+  replicate:
+    allowed: false
+  comfyui_cloud:
+    allowed: true
+    role: "keyframes, reference editing, optional Wan motion workflows"
+    require_live_inventory_check: true
+    workflow_id: null
+  runninghub:
+    allowed: true
+    payment_method: "RH Coins only"
+    role: "MiniMax H3 long-form shots, optional hosted Wan workflows"
+    require_coin_estimate_before_run: true
+    workflow_or_app_id: null
+
+creative_bible:
+  genre: "<add_later>"
+  tone: "<add_later>"
+  visual_style: "<add_later>"
+  color_palette: []
+  camera_rules: []
+  forbidden_visual_changes: []
+
+delivery:
+  aspect_ratio: "16:9"
+  width: 1920
+  height: 1080
+  timeline_fps: 24
+  audio_sample_rate_hz: 48000
+  review_codec: "H.264"
+  master_codec: "<choose_later>"
+  color_space: "Rec.709"
+
+naming:
+  episode: "ep###"
+  scene: "ep###_sc###"
+  shot: "ep###_sc###_sh###"
+  take: "ep###_sc###_sh###_tk###"
+  segment: "ep###_sc###_sh###_tk###_seg##"
+
+paths:
+  characters: "characters"
+  locations: "locations"
+  episodes: "episodes"
+  scenes: "scenes"
+  shots: "shots"
+  references: "references"
+  workflows: "workflows"
+  prompts: "prompts"
+  audio: "audio"
+  outputs: "outputs"
+  logs: "logs"
+

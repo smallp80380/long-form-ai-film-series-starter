@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0-example",
+  "name": "RunningHub MiniMax H3 Director-style segmented shot continuation concept",
+  "status": "example_only_not_importable",
+  "executable": false,
+  "backend": "runninghub",
+  "payment_policy": "RH Coins only",
+  "intent": "Generate a long-form shot as reviewable segments with continuation anchors and selective rerender.",
+  "safety": {
+    "allow_submit": false,
+    "requires_explicit_user_confirmation_per_paid_run": true,
+    "requires_rh_coin_estimate": true,
+    "contains_credentials": false,
+    "contains_external_api_calls": false
+  },
+  "placeholders": {
+    "runninghub_workflow_or_app_id": null,
+    "shot_manifest": "shots/<episode>/<scene>/<shot>/shot.yaml",
+    "start_keyframe": "outputs/keyframes/<shot_id>_start_v###.png",
+    "end_keyframe_optional": "outputs/keyframes/<shot_id>_end_v###.png",
+    "character_references": [],
+    "location_references": [],
+    "audio_reference_optional": null,
+    "shot_prompt": "<prompt_version_path_or_text>",
+    "native_fps": "<verify_with_selected_workflow>",
+    "resolution": "<verify_with_selected_workflow>"
+  },
+  "segments": [
+    {
+      "id": "seg01",
+      "status": "planned",
+      "duration_seconds": null,
+      "start_anchor": "start_keyframe",
+      "continuation_anchor": null,
+      "prompt_delta": "<opening_action>",
+      "output": "outputs/takes/<take_id>_seg01_v001.mp4"
+    },
+    {
+      "id": "seg02",
+      "status": "planned",
+      "duration_seconds": null,
+      "start_anchor": "<last_approved_frame_of_seg01>",
+      "continuation_anchor": "seg01",
+      "prompt_delta": "<continued_action_without_resetting_pose_or_camera>",
+      "output": "outputs/takes/<take_id>_seg02_v001.mp4"
+    }
+  ],
+  "continuity_lock": {
+    "character_bible_revision": "<revision>",
+    "location_bible_revision": "<revision>",
+    "wardrobe_state": "<state>",
+    "prop_state": "<state>",
+    "screen_direction": "<left_to_right|right_to_left|neutral>",
+    "camera_state": "<lens_height_angle_movement>",
+    "lighting_state": "<state>"
+  },
+  "selective_rerender": {
+    "enabled": true,
+    "unit": "segment_or_take",
+    "preserve_approved_segments": true,
+    "rerender_only_ids": [],
+    "reason": null,
+    "parent_revision": null
+  },
+  "qc_gate": [
+    "identity_and_costume",
+    "action_continuity",
+    "camera_continuity",
+    "first_last_frame_match",
+    "temporal_artifacts",
+    "audio_sync_if_present"
+  ],
+  "adaptation_checklist": [
+    "Choose a real RunningHub workflow and record its ID only after inspection.",
+    "Map each placeholder to the exact workflow input node or slot.",
+    "Confirm model/custom-node availability and output duration limits.",
+    "Estimate RH Coins for the selected segment only.",
+    "Obtain explicit confirmation, then enable submission in a copied production file."
+  ]
+}
+

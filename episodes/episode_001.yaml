@@ -1,0 +1,45 @@
+schema_version: "1.0-example"
+episode:
+  id: "ep001"
+  title: "<episode_title>"
+  status: "outline"
+  logline: "<add_later>"
+  synopsis: "<add_later>"
+  target_duration_seconds: null
+  continuity_from_previous_episode: "<none_or_add_later>"
+
+story:
+  premise: "<add_later>"
+  protagonist_goal: "<add_later>"
+  central_conflict: "<add_later>"
+  stakes: "<add_later>"
+  ending_state: "<add_later>"
+  beats:
+    - id: "beat_001"
+      description: "<add_later>"
+      scene_ids: []
+
+cast:
+  character_ids: []
+
+locations:
+  location_ids: []
+
+scenes:
+  - id: "ep001_sc010"
+    title: "<scene_title>"
+    manifest: "scenes/ep001/sc010/scene.yaml"
+    purpose: "<dramatic_purpose>"
+    location_id: "<location_id>"
+    time_of_day: "<add_later>"
+    character_ids: []
+    estimated_duration_seconds: null
+    status: "planned"
+    shot_ids:
+      - "ep001_sc010_sh010"
+
+delivery:
+  review_master: null
+  final_master: null
+  qc_status: "not_started"
+

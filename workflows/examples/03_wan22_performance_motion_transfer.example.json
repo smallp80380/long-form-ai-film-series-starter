@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0-example",
+  "name": "Wan2.2 Animate performance, character replacement, and motion-transfer concept",
+  "status": "example_only_not_importable",
+  "executable": false,
+  "backend": "comfyui_cloud_or_runninghub_after_inventory_check",
+  "intent": "Transfer an existing performance to a target character while preserving timing, blocking, and scene continuity.",
+  "safety": {
+    "allow_submit": false,
+    "requires_explicit_user_confirmation": true,
+    "requires_live_inventory_check": true,
+    "runninghub_payment_if_used": "RH Coins only",
+    "contains_credentials": false,
+    "contains_external_api_calls": false
+  },
+  "mode": "motion_transfer_existing_performance",
+  "mode_limits": {
+    "creates_new_action": false,
+    "note": "For a new action, provide a new performance source or use a separately planned shot with approved start/end keyframes."
+  },
+  "placeholders": {
+    "workflow_id": null,
+    "wan_model_or_template": "<verify_live_wan2_2_animate_capability>",
+    "performance_video": "references/performance/<source_performance>.mp4",
+    "target_character_reference": "characters/<character_id>/references/<approved_reference>.png",
+    "background_or_location_reference": "locations/<location_id>/references/<approved_reference>.png",
+    "optional_pose_sequence": null,
+    "optional_depth_sequence": null,
+    "optional_subject_mask": null,
+    "prompt": "<identity_costume_environment_constraints>",
+    "negative_constraints": "<no_identity_drift_no_costume_change_no_extra_limbs>"
+  },
+  "concept_nodes": [
+    {
+      "id": "01",
+      "type": "LOAD_PERFORMANCE_VIDEO",
+      "provides": ["timing", "body_motion", "blocking", "camera_motion_if_retained"]
+    },
+    {
+      "id": "02",
+      "type": "EXTRACT_OR_LOAD_MOTION_CONTROLS",
+      "controls": ["pose_optional", "depth_optional", "subject_mask_optional"]
+    },
+    {
+      "id": "03",
+      "type": "LOAD_TARGET_CHARACTER_AND_LOCATION_REFERENCES"
+    },
+    {
+      "id": "04",
+      "type": "WAN2_2_ANIMATE_OR_EQUIVALENT_CONCEPT",
+      "motion_from": ["01", "02"],
+      "identity_and_scene_from": ["03"],
+      "prompt": "prompt",
+      "constraints": "negative_constraints"
+    },
+    {
+      "id": "05",
+      "type": "TEMPORAL_QC_GATE",
+      "checks": ["identity", "motion_fidelity", "occlusion", "hands_face", "background_stability", "flicker"]
+    },
+    {
+      "id": "06",
+      "type": "SAVE_REVIEW_TAKE",
+      "path": "outputs/takes/<take_id>_motion_transfer_v###.mp4"
+    }
+  ],
+  "adaptation_checklist": [
+    "Verify the exact Wan2.2 Animate or equivalent template in the chosen backend.",
+    "Confirm supported input duration, resolution, fps, masks, pose, and depth controls.",
+    "Use a short representative test only after separate approval; do not enable it in this example.",
+    "Compare motion against the source and identity against the approved character bible.",
+    "Record rejected-frame ranges for selective rerender or segment replacement."
+  ]
+}
+
