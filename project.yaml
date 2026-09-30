@@ -1,11 +1,11 @@
 schema_version: "1.0-example"
 project:
-  id: "<project_id>"
-  title: "<film_or_series_title>"
+  id: "dema_series"
+  title: "Дёма"
   format: "series" # series | feature | short
-  logline: "<add_later>"
-  synopsis: "<add_later>"
-  language: "<add_later>"
+  logline: "Обычная прогулка мальчика Дёмы каждый раз превращается в большое приключение, где смелость, находчивость и чувство юмора помогают ему защищать тех, кто оказался в беде."
+  synopsis: "Приключенческий сериал о мальчике Дёме, который неожиданно оказывается в центре опасных событий и действует не как непобедимый супергерой, а как смелый, быстрый и изобретательный герой."
+  language: "ru"
   status: "development"
 
 execution:
@@ -27,15 +27,32 @@ backend_policy:
     payment_method: "RH Coins only"
     role: "MiniMax H3 long-form shots, optional hosted Wan workflows"
     require_coin_estimate_before_run: true
-    workflow_or_app_id: null
+    workflow_or_app_id: "2094582511883345922"
+    workflow_name: "MiniMax H3 Director's Desk All-in-One"
+    production_profile: "config/runninghub_h3_r2v.yaml"
 
 creative_bible:
-  genre: "<add_later>"
-  tone: "<add_later>"
-  visual_style: "<add_later>"
-  color_palette: []
-  camera_rules: []
-  forbidden_visual_changes: []
+  genre: "семейное приключение, экшен-комедия"
+  tone: "динамичный, добрый, напряжённый без жестокости, с физической комедией"
+  visual_style: "кинематографичный вымышленный европейский город позднего Средневековья на рубеже раннего Возрождения, визуальный эквивалент около 1480 года"
+  world_period:
+    calendar: "вымышленный мир; реальная историческая дата в кадре не указывается"
+    visual_equivalent: "Западная и Южная Европа, около 1470–1500 годов"
+    production_anchor_year: 1480
+    rule: "допустима сказочная механика медальона, но городская среда, костюмы и бытовой реквизит не должны выглядеть современными"
+  color_palette:
+    - "тёплый камень и терракота старого города"
+    - "прохладные синие тени узких улиц"
+    - "яркий цветовой акцент в одежде Дёмы после утверждения фото"
+  camera_rules:
+    - "сохранять понятную экранную географию и направление движения"
+    - "экшен показывать преимущественно общими и средними планами"
+    - "не использовать чрезмерную тряску камеры и хаотичный монтаж"
+    - "удары строить через тайминг, уклонения и предметы окружения, без смакования насилия"
+  forbidden_visual_changes:
+    - "не менять возраст, лицо, причёску и телосложение Дёмы между шотами"
+    - "не превращать семейный экшен в жестокую или кровавую сцену"
+    - "не добавлять автомобили, электрическое освещение, пластик, современную рекламу, складную мебель или современную одежду"
 
 delivery:
   aspect_ratio: "16:9"
@@ -66,4 +83,3 @@ paths:
   audio: "audio"
   outputs: "outputs"
   logs: "logs"
-

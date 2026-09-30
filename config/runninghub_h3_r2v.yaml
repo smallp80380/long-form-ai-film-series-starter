@@ -1,0 +1,73 @@
+schema_version: "1.0"
+profile_id: "runninghub_h3_director_r2v_v001"
+status: "selected_not_runtime_verified"
+
+selection:
+  backend: "runninghub"
+  hosted_workflow_name: "MiniMax H3 Director's Desk All-in-One"
+  hosted_page_url: "https://www.runninghub.ai/post/2094582511883345922"
+  workflow_or_app_id: "2094582511883345922"
+  local_workflow: "workflows/real_examples/h3_director/minimax_h3_director_r2v.json"
+  upstream_revision: "5c7bdc85fcc7e35849a89d0ba805299801fc6282"
+  task_type: "r2v"
+  rationale:
+    - "принимает несколько reference images и подходит для фиксации внешности Дёмы"
+    - "один и тот же Director поддерживает группы материалов, native audio и selective rerender"
+    - "hosted RunningHub page подтверждена в локальном каталоге проекта"
+    - "не требует performance video, которого в проекте пока нет"
+
+runtime:
+  unet: "minimax_h3_ref2va_pruned_int8_convrot.safetensors"
+  clip: "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+  clip_type: "minimax"
+  video_vae: "minimax_h3_video_vae_fp16.safetensors"
+  audio_vae: "minimax_h3_audio_vae_fp32.safetensors"
+  aspect_ratio: "16:9"
+  width: 1024
+  height: 576
+  delivery_width: 1920
+  delivery_height: 1080
+  fps: 24
+  frames_per_group: 124
+  nominal_duration_seconds: 5
+  steps: 25
+  sampler: "res_multistep"
+  scheduler: "simple"
+  cfg: 1.0
+  video_sigma_shift: 12.0
+  audio_sigma_shift: 3.0
+  continuity:
+    enabled: false
+    reason: "каждый manifest описывает отдельный монтажный план; склейка выполняется на timeline"
+  composition:
+    format: "widescreen"
+    protect_side_action: true
+    safe_area: "держать лица, руки и ключевой реквизит внутри центральных 90% кадра"
+    rule: "не создавать вертикальную композицию и не обрезать до 9:16 или 1:1"
+
+reference_contract:
+  common:
+    picture_1: "characters/char_dema/references/dema_master.png"
+    required: true
+    prompt_tag: "<Picture 1>"
+  per_group:
+    picture_2: "characters/char_girl/references/girl_master.png"
+    picture_3: "characters/group_ninjas/references/ninjas_master.png"
+    picture_4: "locations/loc_old_town/references/old_town_master.png"
+    picture_5: "references/props/mechanical_medallion/references/medallion_master.png"
+  rules:
+    - "не запускать до добавления и утверждения Picture 1"
+    - "не менять номера Picture между material groups"
+    - "не использовать пустой tag Picture в prompt"
+    - "загружать только персонажей, присутствующих в конкретном шоте"
+    - "Picture 5 использовать только в шотах, где медальон виден в кадре"
+
+prompt_pack: "prompts/ep001_h3_r2v.yaml"
+output_pattern: "outputs/takes/<shot_id>/<take_id>_h3_r2v_v001.mp4"
+run_policy:
+  allow_generation: false
+  require_live_node_and_model_check: true
+  require_rh_coin_estimate: true
+  require_explicit_confirmation: true
+  first_test_shot: "ep001_sc010_sh010"
+  first_test_reason: "один персонаж, простое движение и минимальный риск потери identity"

@@ -1,0 +1,9 @@
+id: "ep001_sc020"
+purpose: "Показать находчивый защитный стиль экшена Дёмы и временную победу."
+location_id: "loc_old_town"
+character_ids: ["char_dema", "char_girl", "group_ninjas"]
+time_of_day: "late_afternoon"
+continuity_in: "Дёма закрывает собой девушку; первая группа ниндзя готовится атаковать."
+continuity_out: "Первая группа обезврежена, но с выходов на площадь появляются новые преследователи."
+lighting_revision: "loc_old_town:v002-medallion-map-lock:late_afternoon"
+shot_ids: ["ep001_sc020_sh010", "ep001_sc020_sh020", "ep001_sc020_sh030", "ep001_sc020_sh040", "ep001_sc020_sh050"]
