@@ -1,0 +1,38 @@
+---
+id: ep001_sc030_sh040
+scene_id: ep001_sc030
+editorial_purpose: Под аркой девушка показывает Дёме активированный медальон с детализированной картой города и открывает направление следующей серии.
+duration_target_seconds: 5
+camera:
+  framing: medium close two-shot с переходом в macro insert медальона
+  lens: 50mm
+  height: на уровне персонажей
+  angle: нейтральный, без героизации жестокости
+  movement: медленное приближение к предмету
+action: Девушка раскрывает ладонь; три кольца медальона совмещаются в детализированную карту города, а бирюзовый маршрут от фонтана ведёт к скрытой точке у башни.
+dialogue_or_audio_cue: уточнить на стадии сценария и озвучки
+start_keyframe:
+end_keyframe:
+takes:
+- id: ep001_sc030_sh040_tk001
+  parent_take:
+  workflow_revision: runninghub_h3_director_r2v_v001
+  prompt_revision: ep001_h3_r2v_v001
+  seed:
+  status: planned
+  output:
+  qc:
+    decision:
+    notes: []
+generation:
+  backend: runninghub
+  workflow_profile: config/runninghub_h3_r2v.yaml
+  task_type: r2v
+  material_group_id: ep001_sc030_sh040
+  prompt_pack: prompts/ep001_h3_r2v.yaml
+  prompt_group_id: ep001_sc030_sh040
+  frames: 124
+  fps: 24
+  width: 1024
+  height: 576
+  aspect_ratio: '16:9'

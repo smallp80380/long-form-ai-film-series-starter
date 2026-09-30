@@ -1,0 +1,67 @@
+schema_version: "1.0"
+prompt_pack_id: "ep001_h3_r2v_v001"
+workflow_profile: "config/runninghub_h3_r2v.yaml"
+language: "en"
+
+common_prompt: >-
+  Exact 16:9 widescreen cinematic frame, landscape orientation. Family-friendly
+  cinematic action comedy in a fictional late-medieval European canal city,
+  visually equivalent to circa 1480. Preserve the radial city geography from
+  <Picture 4>: fountain square, irregular stone blocks, turquoise canals, arched
+  bridges, stairs, fortified walls, gates and round towers.
+  Preserve the exact identity, age, face, hair, body proportions and outfit of
+  <Picture 1> as Dema. Clear screen direction, readable full-body motion,
+  realistic weight and contact, natural late-afternoon light. No blood, no injury,
+  no weapons, no text, no logos, no identity drift, no costume change. Never use
+  portrait, vertical, square, pillarboxed or cropped composition. No cars, asphalt,
+  electricity, plastic, modern signage, modern storefronts or contemporary clothing.
+
+groups:
+  ep001_sc010_sh010:
+    refs: ["<Picture 1>", "<Picture 4>"]
+    prompt: "Wide 35mm tracking shot. <Picture 1> walks calmly through a lively stone street inside the walled city, curious and observant. Two-story limestone houses, timber shutters, terracotta roofs, handcarts and natural market ambience."
+  ep001_sc010_sh020:
+    refs: ["<Picture 1>", "<Picture 4>"]
+    prompt: "Medium 50mm slow push-in. <Picture 1> notices frightened pedestrians moving away from the square, stops and looks toward the disturbance."
+  ep001_sc010_sh030:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Over the shoulder of <Picture 1>, wide view of the square. Several masked pursuers matching <Picture 3> surround the girl from <Picture 2> near the fountain. Clear spatial layout."
+  ep001_sc010_sh040:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Medium tracking shot. <Picture 1> steps decisively between the girl from <Picture 2> and the masked pursuers from <Picture 3>, protective rather than aggressive."
+  ep001_sc020_sh010:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Wide 28mm action shot. One masked pursuer attacks. <Picture 1> performs a fast clean dodge; the attacker safely tumbles over a heavy wooden inn chair. Comedic timing, no injury."
+  ep001_sc020_sh020:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Wide lateral tracking shot. <Picture 1> uses a round wooden serving tray from the inn as a shield and redirects two masked pursuers into a harmless collision. Precise athletic movement, playful physical comedy."
+  ep001_sc020_sh030:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Low medium-wide 35mm move. <Picture 1> slides under a heavy wooden inn table, sweeps one pursuer off balance, then catches a falling clay cup without spilling it. One continuous readable action."
+  ep001_sc020_sh040:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Wide 28mm arc shot beside a market cart. <Picture 1> uses quick dodges and two controlled powerful strikes to stop the remaining pursuers as empty wooden boxes scatter. No injury."
+  ep001_sc020_sh050:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Medium 50mm shot. <Picture 1> calmly returns the cup to a table. The girl from <Picture 2> points out new masked pursuers from <Picture 3> entering the square. Quick rack focus."
+  ep001_sc030_sh010:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Wide rear tracking shot. The girl from <Picture 2> takes <Picture 1> by the hand and they sprint from the square into a narrow alley while masked pursuers follow at a distance."
+  ep001_sc030_sh020:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Wide 35mm side tracking shot. <Picture 1> and the girl from <Picture 2> race up a stone staircase; masked pursuers appear below. Golden-hour light, clear direction of travel."
+  ep001_sc030_sh030:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 3>", "<Picture 4>"]
+    prompt: "Static medium-wide shot with depth. At a corner, <Picture 1> cleverly tips empty baskets into the path to delay the pursuers, then immediately continues running with the girl."
+  ep001_sc030_sh040:
+    refs: ["<Picture 1>", "<Picture 2>", "<Picture 4>", "<Picture 5>"]
+    prompt: >-
+      Begin with a medium close two-shot beneath a quiet stone arch. The girl from
+      <Picture 2> opens her hand and reveals the activated mechanical map medallion from
+      <Picture 5> to <Picture 1>. Push into a sharp macro insert: exactly three brass rings
+      lie aligned in one plane, displaying a detailed engraved map of the old city with
+      winding streets, dense blocks, courtyards, the circular fountain, stairs, covered
+      arch, bridge, tower and city wall. One continuous turquoise route crosses all three
+      rings from the fountain to a hidden point beside the tower and glows faintly warm.
+      The map remains physically engraved on the medallion—no hologram or projection.
+      Preserve the exact map geometry and materials from <Picture 5>.

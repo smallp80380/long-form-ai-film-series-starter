@@ -1,0 +1,38 @@
+---
+id: ep001_sc020_sh020
+scene_id: ep001_sc020
+editorial_purpose: Дёма использует деревянный поднос постоялого двора как щит и мягко перенаправляет двух противников друг в друга.
+duration_target_seconds: 5
+camera:
+  framing: wide
+  lens: 32mm
+  height: на уровне персонажей
+  angle: нейтральный, без героизации жестокости
+  movement: боковой трекинг
+action: Дёма использует деревянный поднос постоялого двора как щит и мягко перенаправляет двух противников друг в друга.
+dialogue_or_audio_cue: уточнить на стадии сценария и озвучки
+start_keyframe:
+end_keyframe:
+takes:
+- id: ep001_sc020_sh020_tk001
+  parent_take:
+  workflow_revision: runninghub_h3_director_r2v_v001
+  prompt_revision: ep001_h3_r2v_v001
+  seed:
+  status: planned
+  output:
+  qc:
+    decision:
+    notes: []
+generation:
+  backend: runninghub
+  workflow_profile: config/runninghub_h3_r2v.yaml
+  task_type: r2v
+  material_group_id: ep001_sc020_sh020
+  prompt_pack: prompts/ep001_h3_r2v.yaml
+  prompt_group_id: ep001_sc020_sh020
+  frames: 124
+  fps: 24
+  width: 1024
+  height: 576
+  aspect_ratio: '16:9'

@@ -1,0 +1,9 @@
+id: "ep001_sc030"
+purpose: "Провести героев через погоню, дать им передышку и закончить серию тайной."
+location_id: "loc_old_town"
+character_ids: ["char_dema", "char_girl", "group_ninjas"]
+time_of_day: "golden_hour"
+continuity_in: "Девушка хватает Дёму за руку; они бегут с площади в переулок."
+continuity_out: "Герои временно в безопасности под аркой; загадочный предмет остаётся у девушки."
+lighting_revision: "loc_old_town:v002-medallion-map-lock:golden_hour"
+shot_ids: ["ep001_sc030_sh010", "ep001_sc030_sh020", "ep001_sc030_sh030", "ep001_sc030_sh040"]

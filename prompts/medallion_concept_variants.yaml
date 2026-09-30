@@ -1,0 +1,66 @@
+schema_version: "1.0"
+prompt_set_id: "mechanical_map_medallion_candidates_v002"
+language: "en"
+purpose: "Generate five candidates; the activated medallion and its detailed city map are the primary design subject."
+
+shared_requirements: >-
+  Professional 16:9 landscape production-design reference sheet for one original
+  mechanical map medallion from a family adventure film. The primary and largest
+  view must show the medallion fully activated, front-facing and unobstructed.
+  Round 55 mm artifact, 9 mm thick, aged warm brass, matte turquoise enamel, exactly
+  three broad concentric rotating rings. In the activated state the three rings lock
+  into one flat circular surface and form a highly detailed engraved map of a fictional
+  old European city: winding streets and narrow alleys of varied widths, dense building
+  blocks, inner courtyards, a central square with a circular fountain, a stone staircase,
+  a covered arch, a small bridge, an old tower and a surrounding city wall. A single
+  continuous turquoise route travels from the fountain across all three ring boundaries
+  to a concealed destination beside the tower. Every street and landmark is physically
+  engraved into the brass and filled with enamel; the map is part of the medallion,
+  never projected above it. Ring boundaries remain visible, while map lines align
+  precisely across them. The detailed map must be crisp and readable in close-up.
+  Include smaller secondary views of the identical prop: macro map detail, closed front,
+  mechanical back, side profile, and scale beside a neutral child-sized hand. Realistic
+  practical prop, soft studio lighting, consistent construction in every view.
+
+negative_prompt: >-
+  simplified map, abstract maze only, sparse lines, illegible streets, generic compass
+  face, text, letters, numbers, labels, map legend, logos, watermark, real city plan,
+  recognizable monument, coat of arms, religious symbol, occult symbol, hologram,
+  floating map, projected interface, screen, sci-fi HUD, bright energy beam, gemstones,
+  chain, weapon, blade, sharp edge, extra rings, fewer than three rings, inconsistent views
+
+variants:
+  - id: "medallion_variant_01_cartographic"
+    output: "references/props/mechanical_medallion/candidates/medallion_variant_01.png"
+    direction: >-
+      Classical cartographer version. Use precise street hierarchy, tiny but readable
+      building footprints, courtyards and civic landmarks. The turquoise route is narrow
+      and elegant; only that route emits a restrained warm amber edge glow.
+
+  - id: "medallion_variant_02_architectural"
+    output: "references/props/mechanical_medallion/candidates/medallion_variant_02.png"
+    direction: >-
+      Architectural relief version. Give the engraved districts subtle differences in
+      depth: raised building blocks, recessed streets, clearly modeled fountain, bridge,
+      stairway, arch and tower. Preserve cartographic accuracy and a clean readable route.
+
+  - id: "medallion_variant_03_layered_city"
+    output: "references/props/mechanical_medallion/candidates/medallion_variant_03.png"
+    direction: >-
+      Layered mechanical version. Each of the three rings carries a different zone of the
+      same city—center, old quarters and outer wall—and activation visibly aligns hundreds
+      of engraved streets into one continuous detailed plan. No gaps at ring boundaries.
+
+  - id: "medallion_variant_04_ancient_patina"
+    output: "references/props/mechanical_medallion/candidates/medallion_variant_04.png"
+    direction: >-
+      Ancient archive version. Darker brass patina collects in the engraved streets while
+      polished raised landmarks remain legible. The intricate city map looks centuries old
+      but mechanically exact; turquoise enamel clearly traces the route to the hidden tower.
+
+  - id: "medallion_variant_05_cinematic"
+    output: "references/props/mechanical_medallion/candidates/medallion_variant_05.png"
+    direction: >-
+      Cinematic hero-prop version. Maximize instant readability for a film insert: complex
+      city fabric with a strong fountain-to-tower route, distinct landmark silhouettes and
+      controlled warm glow inside the engraved turquoise path, with no digital effects.

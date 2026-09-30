@@ -1,45 +1,80 @@
 schema_version: "1.0-example"
 episode:
   id: "ep001"
-  title: "<episode_title>"
+  title: "Незнакомка в старом городе"
   status: "outline"
-  logline: "<add_later>"
-  synopsis: "<add_later>"
-  target_duration_seconds: null
-  continuity_from_previous_episode: "<none_or_add_later>"
+  logline: "Во время прогулки по старому европейскому городу Дёма замечает нападение на девушку, вступается за неё и после стремительной схватки вынужден бежать вместе с ней от преследователей."
+  synopsis: "Дёма беззаботно идёт по старому городу, пока не замечает, как группа ниндзя окружает испуганную девушку. Он не проходит мимо и вмешивается. Используя скорость, находчивость, акробатику и предметы городской улицы, Дёма обезвреживает нападающих без жестокости. Победа оказывается временной: на площади появляются новые преследователи. Девушка хватает Дёму за руку, и они скрываются в переулках. Перед тем как раствориться в городе, она показывает загадочный предмет, из-за которого за ней охотятся, открывая главную тайну продолжения."
+  target_duration_seconds: 65
+  continuity_from_previous_episode: "none — первая серия"
+  story_time:
+    era: "вымышленное позднее Средневековье на рубеже раннего Возрождения"
+    production_anchor: "около 1480 года; допустимый визуальный диапазон 1470–1500"
+    calendar_date: "не называется в кадре"
+    episode_window: "один поздний день, переходящий в золотой час"
 
 story:
-  premise: "<add_later>"
-  protagonist_goal: "<add_later>"
-  central_conflict: "<add_later>"
-  stakes: "<add_later>"
-  ending_state: "<add_later>"
+  premise: "Случайная прогулка знакомит Дёму с девушкой, которую преследует таинственная группа."
+  protagonist_goal: "Сначала спокойно пройти через город, затем защитить девушку и помочь ей уйти от преследователей."
+  central_conflict: "Дёма противостоит численно превосходящей группе ниндзя и пытается понять, почему они преследуют девушку."
+  stakes: "Если Дёма не вмешается, девушку схватят; после вмешательства целью преследователей становится и он сам."
+  ending_state: "Дёма и девушка временно отрываются от погони; активированный механический медальон показывает детализированную карту города и маршрут от фонтана к скрытой точке у башни."
   beats:
     - id: "beat_001"
-      description: "<add_later>"
-      scene_ids: []
+      description: "Дёма гуляет по старому городу; спокойный ритм знакомит зрителя с героем и пространством."
+      scene_ids: ["ep001_sc010"]
+    - id: "beat_002"
+      description: "Дёма слышит шум, замечает девушку в окружении ниндзя и решает вмешаться."
+      scene_ids: ["ep001_sc010", "ep001_sc020"]
+    - id: "beat_003"
+      description: "Дёма побеждает первую группу благодаря ловкости, импровизации и предметам окружения."
+      scene_ids: ["ep001_sc020"]
+    - id: "beat_004"
+      description: "Появляется новая группа преследователей; Дёма и девушка убегают через переулки."
+      scene_ids: ["ep001_sc030"]
+    - id: "beat_005"
+      description: "Девушка активирует механический медальон; его три кольца складываются в детализированную карту города с маршрутом к башне, создавая крючок второй серии."
+      scene_ids: ["ep001_sc030"]
 
 cast:
-  character_ids: []
+  character_ids: ["char_dema", "char_girl", "group_ninjas"]
 
 locations:
-  location_ids: []
+  location_ids: ["loc_old_town"]
 
 scenes:
   - id: "ep001_sc010"
-    title: "<scene_title>"
+    title: "Прогулка и нападение"
     manifest: "scenes/ep001/sc010/scene.yaml"
-    purpose: "<dramatic_purpose>"
-    location_id: "<location_id>"
-    time_of_day: "<add_later>"
-    character_ids: []
-    estimated_duration_seconds: null
+    purpose: "Представить Дёму, город и момент, когда герой решает помочь незнакомке."
+    location_id: "loc_old_town"
+    time_of_day: "поздний день"
+    character_ids: ["char_dema", "char_girl", "group_ninjas"]
+    estimated_duration_seconds: 20
     status: "planned"
-    shot_ids:
-      - "ep001_sc010_sh010"
+    shot_ids: ["ep001_sc010_sh010", "ep001_sc010_sh020", "ep001_sc010_sh030", "ep001_sc010_sh040"]
+  - id: "ep001_sc020"
+    title: "Дёма вступает в бой"
+    manifest: "scenes/ep001/sc020/scene.yaml"
+    purpose: "Раскрыть смелость и находчивый комедийный стиль действия Дёмы."
+    location_id: "loc_old_town"
+    time_of_day: "поздний день"
+    character_ids: ["char_dema", "char_girl", "group_ninjas"]
+    estimated_duration_seconds: 25
+    status: "planned"
+    shot_ids: ["ep001_sc020_sh010", "ep001_sc020_sh020", "ep001_sc020_sh030", "ep001_sc020_sh040", "ep001_sc020_sh050"]
+  - id: "ep001_sc030"
+    title: "Погоня и тайна"
+    manifest: "scenes/ep001/sc030/scene.yaml"
+    purpose: "Свести героев вместе, завершить локальный конфликт и открыть сериалу следующую тайну."
+    location_id: "loc_old_town"
+    time_of_day: "золотой час"
+    character_ids: ["char_dema", "char_girl", "group_ninjas"]
+    estimated_duration_seconds: 20
+    status: "planned"
+    shot_ids: ["ep001_sc030_sh010", "ep001_sc030_sh020", "ep001_sc030_sh030", "ep001_sc030_sh040"]
 
 delivery:
   review_master: null
   final_master: null
   qc_status: "not_started"
-

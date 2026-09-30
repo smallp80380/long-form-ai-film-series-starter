@@ -1,0 +1,9 @@
+id: "ep001_sc010"
+purpose: "Представить Дёму и показать его решение защитить девушку."
+location_id: "loc_old_town"
+character_ids: ["char_dema", "char_girl", "group_ninjas"]
+time_of_day: "late_afternoon"
+continuity_in: "Дёма один входит на спокойную пешеходную улицу."
+continuity_out: "Дёма стоит между девушкой и ниндзя; мирная прогулка закончилась."
+lighting_revision: "loc_old_town:v002-medallion-map-lock:late_afternoon"
+shot_ids: ["ep001_sc010_sh010", "ep001_sc010_sh020", "ep001_sc010_sh030", "ep001_sc010_sh040"]
